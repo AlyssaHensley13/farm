@@ -1,0 +1,189 @@
+/* -------------------- IMPORTED FONTS -------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Habibi&family=Irish+Grover&display=swap')
+/*-------------------- CSS REST ---------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* -------------------- ROOT VARIABLES --------------------------------------- */
+ :root {
+    --green: #06a816;
+    --orange: #e75d02;
+    --black: #000000;
+    --white: #ffffff;
+    --font-pri: 'Habibi', serif;
+    --font-heading: 'Irish Grover', cursive;
+    --h1-size: 2.5em;
+    --h2-size: 1.75em;
+    --h3-size: 1.25em;
+    --text-size: 1.25em;
+    --label-bg-color: rgba(0, 0, 0, 0.5);
+}
+/* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
+body {
+    font-family: var(--font-pri);
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+    padding: 10px;
+    margin: 0;
+}
+header {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 20px;
+    text-align: left;
+}
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    font-family: var(--font-heading);
+    font-size: var(--h1-size);
+}
+h2 {
+    font-family: var(--font-heading);
+    font-size: var(--h2-size);
+    margin-bottom: 15px;
+    text-align: left;
+    padding-left: 10px;
+}
+h3 {
+    font-family: var(--font-heading);
+    font-size: var(--h3-size);
+    margin-bottom: 10px;
+    text-align: center;
+}
+p, li {
+    font-size: var(--text-size);
+    margin-bottom: 10px;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    background-color: var(--orange);
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: 2px solid var(--white);
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin: 20px 0;
+}
+.grid div {
+    position: relative;
+    text-align: center;
+}
+.grid div img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.grid div p {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--white);
+    padding: 5px 10px;
+    font-size: var(--text-size);
+    border-radius: 5px;
+}
+footer {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+footer .footer section {
+    margin-bottom: 20px;
+}
+footer .footer-section h3 {
+    font-size: var(--h3-size);
+    margin-bottom: 10px;
+}
+footer .footer-section ul, address {
+    font-size: var(--text-size);
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+footer .footer-section.contact {
+    text-align: left;
+}
+footer .footer-section.hours {
+    text-align: center;
+}
+.footer-section.hours ul {
+    text-align: right;
+}
+.Copyright {
+    text-align: center;
+    margin-top: 10px;
+}
+#top-button {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--orange);
+    color: var(--white);
+    text-align: center;
+    line-height: 50px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+/*-------------------- MEDIA QUERY (medium) --------------------------------*/
+@media (min-width: 834px) {
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+.grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+nav ul li a {
+    padding: 15px 25px;
+    }
+}
+/*-------------------- MEDIA QUERY (large) ------------------------------------*/
+@media (min-width: 1280px) {
+    .grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+/*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
+@media (min-width: 1440px) {
+    .grid {
+        grid-template-columns: repeat(8, 1fr);
+    }
+    h1 {
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+}
